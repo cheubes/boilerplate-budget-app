@@ -1,11 +1,10 @@
 class Category:
-    category = ''
-    ledger = []
 
     def __init__(self, category):
         self.category = category
+        self.ledger = []
 
-    def deposit(self, amount, description):
+    def deposit(self, amount, description = ''):
         self.ledger.append({'amount':amount, 'description':description})
 
 

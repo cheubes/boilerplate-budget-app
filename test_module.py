@@ -15,12 +15,12 @@ class UnitTests(unittest.TestCase):
         expected = {"amount": 900, "description": "deposit"}
         self.assertEqual(actual, expected, 'Expected `deposit` method to create a specific object in the ledger instance variable.')
 
-    # def test_deposit_no_description(self):
-    #     self.food.deposit(45.56)
-    #     actual = self.food.ledger[0]
-    #     expected = {"amount": 45.56, "description": ""}
-    #     self.assertEqual(actual, expected, 'Expected calling `deposit` method with no description to create a blank description.')
-    #
+    def test_deposit_no_description(self):
+        self.food.deposit(45.56)
+        actual = self.food.ledger[0]
+        expected = {"amount": 45.56, "description": ""}
+        self.assertEqual(actual, expected, 'Expected calling `deposit` method with no description to create a blank description.')
+
     # def test_withdraw(self):
     #     self.food.deposit(900, "deposit")
     #     self.food.withdraw(45.67, "milk, cereal, eggs, bacon, bread")
