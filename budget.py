@@ -60,7 +60,6 @@ def create_spend_chart(categories):
     for category in categories :
         category_names.append(category.category)
         percentages_spent.append(math.floor(category.spent/total_spent*10)*10)
-    print(percentages_spent)
 
     spend_chart = 'Percentage spent by category\n'
 
