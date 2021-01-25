@@ -55,15 +55,15 @@ class UnitTests(unittest.TestCase):
         expected = {"amount": 20, "description": "Transfer from Food"}
         self.assertEqual(actual, expected, 'Expected `transfer` method to create a specific ledger item in entertainment object.')
 
-    # def test_check_funds(self):
-    #     self.food.deposit(10, "deposit")
-    #     actual = self.food.check_funds(20)
-    #     expected = False
-    #     self.assertEqual(actual, expected, 'Expected `check_funds` method to be False')
-    #     actual = self.food.check_funds(10)
-    #     expected = True
-    #     self.assertEqual(actual, expected, 'Expected `check_funds` method to be True')
-    #
+    def test_check_funds(self):
+        self.food.deposit(10, "deposit")
+        actual = self.food.check_funds(20)
+        expected = False
+        self.assertEqual(actual, expected, 'Expected `check_funds` method to be False')
+        actual = self.food.check_funds(10)
+        expected = True
+        self.assertEqual(actual, expected, 'Expected `check_funds` method to be True')
+
     # def test_withdraw_no_funds(self):
     #     self.food.deposit(100, "deposit")
     #     good_withdraw = self.food.withdraw(100.10)

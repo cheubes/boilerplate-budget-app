@@ -21,6 +21,12 @@ class Category:
         self.balance -= amount
         return True
 
+    def check_funds(self, amount):
+        if amount > self.balance :
+            return False
+        else :
+            return True
+
     def get_balance(self):
         return self.balance
 
