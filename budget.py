@@ -6,7 +6,11 @@ class Category:
 
     def deposit(self, amount, description = ''):
         self.ledger.append({'amount':amount, 'description':description})
+        return True
 
+    def withdraw(self, amount, description = ''):
+        self.ledger.append({'amount':-amount, 'description':description})
+        return True
 
 
 def create_spend_chart(categories):
