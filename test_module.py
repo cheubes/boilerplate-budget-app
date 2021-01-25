@@ -64,16 +64,16 @@ class UnitTests(unittest.TestCase):
         expected = True
         self.assertEqual(actual, expected, 'Expected `check_funds` method to be True')
 
-    # def test_withdraw_no_funds(self):
-    #     self.food.deposit(100, "deposit")
-    #     good_withdraw = self.food.withdraw(100.10)
-    #     self.assertEqual(good_withdraw, False, 'Expected `withdraw` method to return `False`.')
-    #
-    # def test_transfer_no_funds(self):
-    #     self.food.deposit(100, "deposit")
-    #     good_transfer = self.food.transfer(200, self.entertainment)
-    #     self.assertEqual(good_transfer, False, 'Expected `transfer` method to return `False`.')
-    #
+    def test_withdraw_no_funds(self):
+        self.food.deposit(100, "deposit")
+        good_withdraw = self.food.withdraw(100.10)
+        self.assertEqual(good_withdraw, False, 'Expected `withdraw` method to return `False`.')
+
+    def test_transfer_no_funds(self):
+        self.food.deposit(100, "deposit")
+        good_transfer = self.food.transfer(200, self.entertainment)
+        self.assertEqual(good_transfer, False, 'Expected `transfer` method to return `False`.')
+
     # def test_to_string(self):
     #     self.food.deposit(900, "deposit")
     #     self.food.withdraw(45.67, "milk, cereal, eggs, bacon, bread")
