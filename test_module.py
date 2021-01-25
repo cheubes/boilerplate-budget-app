@@ -43,18 +43,18 @@ class UnitTests(unittest.TestCase):
         expected = 854.33
         self.assertEqual(actual, expected, 'Expected balance to be 854.33')
 
-    # def test_transfer(self):
-    #     self.food.deposit(900, "deposit")
-    #     self.food.withdraw(45.67, "milk, cereal, eggs, bacon, bread")
-    #     good_transfer = self.food.transfer(20, self.entertainment)
-    #     actual = self.food.ledger[2]
-    #     expected = {"amount": -20, "description": "Transfer to Entertainment"}
-    #     self.assertEqual(actual, expected, 'Expected `transfer` method to create a specific ledger item in food object.')
-    #     self.assertEqual(good_transfer, True, 'Expected `transfer` method to return `True`.')
-    #     actual = self.entertainment.ledger[0]
-    #     expected = {"amount": 20, "description": "Transfer from Food"}
-    #     self.assertEqual(actual, expected, 'Expected `transfer` method to create a specific ledger item in entertainment object.')
-    #
+    def test_transfer(self):
+        self.food.deposit(900, "deposit")
+        self.food.withdraw(45.67, "milk, cereal, eggs, bacon, bread")
+        good_transfer = self.food.transfer(20, self.entertainment)
+        actual = self.food.ledger[2]
+        expected = {"amount": -20, "description": "Transfer to Entertainment"}
+        self.assertEqual(actual, expected, 'Expected `transfer` method to create a specific ledger item in food object.')
+        self.assertEqual(good_transfer, True, 'Expected `transfer` method to return `True`.')
+        actual = self.entertainment.ledger[0]
+        expected = {"amount": 20, "description": "Transfer from Food"}
+        self.assertEqual(actual, expected, 'Expected `transfer` method to create a specific ledger item in entertainment object.')
+
     # def test_check_funds(self):
     #     self.food.deposit(10, "deposit")
     #     actual = self.food.check_funds(20)

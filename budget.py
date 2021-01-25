@@ -15,6 +15,12 @@ class Category:
         self.balance -= amount
         return True
 
+    def transfer(self, amount, to):
+        self.ledger.append({'amount':-amount, 'description':f'Transfer to {to.category}'})
+        to.deposit(amount, f'Transfer from {self.category}')
+        self.balance -= amount
+        return True
+
     def get_balance(self):
         return self.balance
 
