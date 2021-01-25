@@ -36,5 +36,16 @@ class Category:
     def get_balance(self):
         return self.balance
 
+    def __str__(self):
+        str = self.category.center(30, '*') + '\n'
+        for item in self.ledger :
+            description = item["description"][:23].ljust(23)
+            amount = f'{item["amount"]:7.2f}'
+            line = description + amount
+            str += f'{line}\n'
+        str += f'Total: {self.balance}'
+        return str
+
+
 def create_spend_chart(categories):
     return ''
